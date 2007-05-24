@@ -1,12 +1,11 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:    0.98.39
-Release:	%mkrel 4
+Version:    0.99.00
+Release:	%mkrel 1
 License:	LGPL
 Group:		Development/Other
 
 Source:		http://prdownloads.sourceforge.net/nasm/%{name}-%{version}.tar.bz2
-Patch0:		nasm-0.98.39-CAN-2005-1194.patch
 
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -41,7 +40,6 @@ include linker, library manager, loader, and information dump.
 %prep
 
 %setup -q
-%patch0 -p1 -b .can-2005-1194
 
 %build
 rm -f config.cache config.status config.log
