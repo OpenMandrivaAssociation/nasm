@@ -17,8 +17,8 @@ BuildRequires:	texinfo
 %package doc
 Summary:	Extensive documentation for NASM
 Group:		Books/Computer books
-Requires(pre):		/sbin/install-info
-Requires(postun):		/sbin/install-info
+Requires(pre):		info-install
+Requires(postun):		info-install
 
 %package rdoff
 Summary:	Tools for the RDOFF binary format, sometimes used with NASM
