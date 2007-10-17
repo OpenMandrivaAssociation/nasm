@@ -9,7 +9,6 @@ Group:		Development/Other
 Source:		http://prdownloads.sourceforge.net/nasm/%{name}-%{version}.tar.bz2
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	glibc-static-devel
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
@@ -45,7 +44,7 @@ include linker, library manager, loader, and information dump.
 %build
 rm -f config.cache config.status config.log
 %configure2_5x
-%make everything
+make everything
 
 %install
 rm -rf $RPM_BUILD_ROOT
