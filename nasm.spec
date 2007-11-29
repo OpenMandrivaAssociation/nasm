@@ -1,13 +1,12 @@
-%define prerel rc3
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:    2.00
-Release:	%mkrel 0.%prerel.1
+Release:	%mkrel 1
 Epoch: 1
 License:	LGPL
 Group:		Development/Other
 
-Source:		http://prdownloads.sourceforge.net/nasm/%{name}-%{version}%prerel.tar.bz2
+Source:		http://prdownloads.sourceforge.net/nasm/%{name}-%{version}.tar.bz2
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
@@ -40,7 +39,7 @@ include linker, library manager, loader, and information dump.
 
 %prep
 
-%setup -q -n %name-%version%prerel
+%setup -q
 
 %build
 rm -f config.cache config.status config.log
