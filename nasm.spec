@@ -8,7 +8,6 @@ Group:		Development/Other
 
 Source:		http://prdownloads.sourceforge.net/nasm/%{name}-%{version}.tar.bz2
 URL:		http://nasm.sourceforge.net
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
