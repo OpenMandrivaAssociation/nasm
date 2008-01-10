@@ -1,4 +1,4 @@
-%define prerel rc1
+%define prerel rc2
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:    2.01
