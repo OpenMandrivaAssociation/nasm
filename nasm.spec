@@ -1,7 +1,7 @@
 %define fname %name-%version
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:    2.03
+Version:    2.03.01
 Release:	%mkrel 1
 Epoch: 1
 License:	LGPL
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(-,root,root)
-%doc doc/nasmdoc.ps.bz2 doc/nasmdoc.txt.bz2 doc/nasmdoc.rtf doc/html
+%doc doc/nasmdoc.ps.bz2 doc/nasmdoc.txt.bz2  doc/html
 
 %files rdoff
 %defattr(-,root,root)
