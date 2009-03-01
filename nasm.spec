@@ -1,14 +1,15 @@
-%define prerel rc1
+%define prerel rc6
 %define fname %name-%version%prerel
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:    2.06
+Version:	2.06
 Release:	%mkrel 0.%prerel.1
 Epoch: 1
 License:	LGPL
 Group:		Development/Other
 
 Source:		http://www.nasm.us/pub/nasm/releasebuilds/%version/%{fname}.tar.bz2
+Patch0:		nasm-2.06-fix-str-mt.patch
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
@@ -42,6 +43,7 @@ include linker, library manager, loader, and information dump.
 %prep
 
 %setup -q -n %fname
+%patch0 -p0
 
 %build
 rm -f config.cache config.status config.log
@@ -49,17 +51,17 @@ rm -f config.cache config.status config.log
 make everything
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/{%{_bindir},%{_infodir},%{_mandir}/man1}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}/{%{_bindir},%{_infodir},%{_mandir}/man1}
 %makeinstall install_rdf
 cd doc
-install info/* $RPM_BUILD_ROOT/%{_infodir}/
+install info/* %{buildroot}/%{_infodir}/
 bzip2 -9f nasmdoc*.txt nasmdoc*.ps||true
 cd html
 ln -sf nasmdoc0.html index.html
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %_install_info nasm.info
