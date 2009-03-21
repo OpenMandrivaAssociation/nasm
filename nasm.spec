@@ -1,18 +1,15 @@
-%define prerel rc7
+%define prerel rc8
 %define fname %name-%version%prerel
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.06
-Release:	%mkrel 0.%prerel.2
+Release:	%mkrel 0.%prerel.
 Epoch: 1
 License:	LGPL
 Group:		Development/Other
 
 Source:		http://www.nasm.us/pub/nasm/releasebuilds/%version/%{fname}.tar.bz2
 Patch0:		nasm-2.06-fix-str-mt.patch
-# (misc) segfault found when compiling zsnes, some memory was not initialised.
-# patch was applied upstream 
-Patch1:     nasm-2.06-fix-segfault-on-zsnes-compilation.patch
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
@@ -47,7 +44,6 @@ include linker, library manager, loader, and information dump.
 
 %setup -q -n %fname
 %patch0 -p0
-%patch1 -p1
 
 %build
 rm -f config.cache config.status config.log
