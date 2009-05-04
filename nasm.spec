@@ -1,14 +1,15 @@
-%define prerel rc10
-%define fname %name-%version%prerel
+%define prerel rc11
+%define fversion %version%prerel
+%define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.06
-Release:	%mkrel 0.%prerel.
+Release:	%mkrel 0.%prerel.1
 Epoch: 1
 License:	LGPL
 Group:		Development/Other
 
-Source:		http://www.nasm.us/pub/nasm/releasebuilds/%version/%{fname}.tar.bz2
+Source:		http://www.nasm.us/pub/nasm/releasebuilds/%fversion/%{fname}.tar.bz2
 Patch0:		nasm-2.06-fix-str-mt.patch
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
