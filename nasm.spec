@@ -1,4 +1,4 @@
-%define prerel rc11
+%define prerel rc12
 %define fversion %version%prerel
 %define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
