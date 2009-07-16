@@ -1,16 +1,16 @@
-%define prerel 0
-%define fversion %version
+%define prerel rc6
+%define fversion %version%prerel
 %define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.06
-Release:	%mkrel 1
+Version:	2.07
+Release:	%mkrel 0.%prerel.1
 Epoch: 1
-License:	LGPL
+License:	BSD
 Group:		Development/Other
 
 Source:		http://www.nasm.us/pub/nasm/releasebuilds/%fversion/%{fname}.tar.bz2
-Patch0:		nasm-2.06-fix-str-mt.patch
+Patch0:		nasm-2.07rc6-fix-str-mt.patch
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
@@ -44,7 +44,7 @@ include linker, library manager, loader, and information dump.
 %prep
 
 %setup -q -n %fname
-%patch0 -p0
+%patch0 -p1 -b .format-strings
 
 %build
 rm -f config.cache config.status config.log
@@ -72,9 +72,11 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc COPYING CHANGES TODO AUTHORS README doc/internal.doc
+%doc LICENSE CHANGES TODO AUTHORS README doc/internal.doc
 %attr(755,root,root) %{_bindir}/nasm
 %attr(755,root,root) %{_bindir}/ndisasm
+%attr(755,root,root) %{_bindir}/rdf2ith
+%attr(755,root,root) %{_bindir}/rdf2srec
 %{_mandir}/man1/ldrdf.1*
 %{_mandir}/man1/nasm.1*
 %{_mandir}/man1/ndisasm.1*
