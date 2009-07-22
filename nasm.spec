@@ -1,10 +1,10 @@
 %define prerel rc6
-%define fversion %version%prerel
+%define fversion %version
 %define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.07
-Release:	%mkrel 0.%prerel.1
+Release:	%mkrel 1
 Epoch: 1
 License:	BSD
 Group:		Development/Other
