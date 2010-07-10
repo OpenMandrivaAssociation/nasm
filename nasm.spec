@@ -3,14 +3,13 @@
 %define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.07
-Release:	%mkrel 2
+Version:	2.08.02
+Release:	%mkrel 1
 Epoch: 1
 License:	BSD
 Group:		Development/Other
 
 Source:		http://www.nasm.us/pub/nasm/releasebuilds/%fversion/%{fname}.tar.bz2
-Patch0:		nasm-2.07rc6-fix-str-mt.patch
 URL:		http://nasm.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
@@ -44,7 +43,6 @@ include linker, library manager, loader, and information dump.
 %prep
 
 %setup -q -n %fname
-%patch0 -p1 -b .format-strings
 
 %build
 rm -f config.cache config.status config.log
