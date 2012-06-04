@@ -1,17 +1,12 @@
-%define prerel rc6
-%define fversion %version
-%define fname %name-%fversion
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.10
-Release:	%mkrel 1
-Epoch: 1
+Version:	2.10.01
+Release:	2
+Epoch:		1
 License:	BSD
 Group:		Development/Other
-
-Source:		http://www.nasm.us/pub/nasm/releasebuilds/%fversion/%{fname}.tar.xz
+Source:		http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
 URL:		http://nasm.sourceforge.net
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
@@ -19,8 +14,6 @@ BuildRequires:	texinfo
 %package doc
 Summary:	Extensive documentation for NASM
 Group:		Books/Computer books
-Requires(pre):		info-install
-Requires(postun):		info-install
 
 %package rdoff
 Summary:	Tools for the RDOFF binary format, sometimes used with NASM
@@ -41,8 +34,7 @@ is sometimes used with the Netwide Assembler (NASM).  These tools
 include linker, library manager, loader, and information dump.
 
 %prep
-
-%setup -q -n %fname
+%setup -q
 
 %build
 rm -f config.cache config.status config.log
@@ -59,17 +51,7 @@ bzip2 -9f nasmdoc*.txt nasmdoc*.ps||true
 cd html
 ln -sf nasmdoc0.html index.html
 
-%clean
-rm -rf %{buildroot}
-
-%post
-%_install_info nasm.info
-
-%preun
-%_remove_install_info nasm.info
-
 %files
-%defattr(-,root,root)
 %doc LICENSE CHANGES TODO AUTHORS README doc/internal.doc
 %attr(755,root,root) %{_bindir}/nasm
 %attr(755,root,root) %{_bindir}/ndisasm
@@ -82,11 +64,9 @@ rm -rf %{buildroot}
 %{_infodir}/nasm.info*
 
 %files doc
-%defattr(-,root,root)
 %doc doc/nasmdoc.ps.bz2 doc/nasmdoc.txt.bz2  doc/html
 
 %files rdoff
-%defattr(-,root,root)
 %doc rdoff/README rdoff/doc/v1-v2.txt
 %{_bindir}/rdfdump
 %{_bindir}/ldrdf
