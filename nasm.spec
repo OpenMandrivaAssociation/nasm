@@ -1,11 +1,11 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.10.01
-Release:	2
+Version:	2.10.05
+Release:	1
 Epoch:		1
 License:	BSD
 Group:		Development/Other
-Source:		http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
+Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
 URL:		http://nasm.sourceforge.net
 BuildRequires:	ghostscript
 BuildRequires:	groff
@@ -75,5 +75,3 @@ ln -sf nasmdoc0.html index.html
 %{_bindir}/rdf2bin
 %{_bindir}/rdf2ihx
 %{_bindir}/rdf2com
-
-
