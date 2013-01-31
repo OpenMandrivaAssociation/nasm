@@ -42,10 +42,9 @@ include linker, library manager, loader, and information dump.
 make everything
 
 %install
-mkdir -p %{buildroot}/{%{_bindir},%{_infodir},%{_mandir}/man1}
 %makeinstall install_rdf
 cd doc
-install info/* %{buildroot}/%{_infodir}/
+cp -r info %{buildroot}%{_infodir}
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
 cd html
 ln -sf nasmdoc0.html index.html
