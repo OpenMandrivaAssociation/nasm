@@ -14,6 +14,7 @@ BuildRequires:	texinfo
 %package	doc
 Summary:	Extensive documentation for NASM
 Group:		Books/Computer books
+BuildArch:	noarch
 
 %package	rdoff
 Summary:	Tools for the RDOFF binary format, sometimes used with NASM
