@@ -11,11 +11,11 @@ BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
 
-%package doc
+%package	doc
 Summary:	Extensive documentation for NASM
 Group:		Books/Computer books
 
-%package rdoff
+%package	rdoff
 Summary:	Tools for the RDOFF binary format, sometimes used with NASM
 Group:		Development/Other
 
@@ -37,26 +37,24 @@ include linker, library manager, loader, and information dump.
 %setup -q
 
 %build
-rm -f config.cache config.status config.log
 %configure2_5x
 make everything
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}/{%{_bindir},%{_infodir},%{_mandir}/man1}
 %makeinstall install_rdf
 cd doc
 install info/* %{buildroot}/%{_infodir}/
-bzip2 -9f nasmdoc*.txt nasmdoc*.ps||true
+xz -v --text nasmdoc*.txt nasmdoc*.ps||true
 cd html
 ln -sf nasmdoc0.html index.html
 
 %files
 %doc LICENSE CHANGES TODO AUTHORS README doc/internal.doc
-%attr(755,root,root) %{_bindir}/nasm
-%attr(755,root,root) %{_bindir}/ndisasm
-%attr(755,root,root) %{_bindir}/rdf2ith
-%attr(755,root,root) %{_bindir}/rdf2srec
+%{_bindir}/nasm
+%{_bindir}/ndisasm
+%{_bindir}/rdf2ith
+%{_bindir}/rdf2srec
 %{_mandir}/man1/ldrdf.1*
 %{_mandir}/man1/nasm.1*
 %{_mandir}/man1/ndisasm.1*
@@ -64,7 +62,7 @@ ln -sf nasmdoc0.html index.html
 %{_infodir}/nasm.info*
 
 %files doc
-%doc doc/nasmdoc.ps.bz2 doc/nasmdoc.txt.bz2  doc/html
+%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz doc/html
 
 %files rdoff
 %doc rdoff/README rdoff/doc/v1-v2.txt
