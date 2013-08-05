@@ -2,32 +2,32 @@ Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.10.07
 Release:	2
-Epoch:		1
+Epoch:	1
 License:	BSD
 Group:		Development/Other
+Url:		http://nasm.sourceforge.net
 Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
-URL:		http://nasm.sourceforge.net
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
-
-%package	doc
-Summary:	Extensive documentation for NASM
-Group:		Books/Computer books
-BuildArch:	noarch
-
-%package	rdoff
-Summary:	Tools for the RDOFF binary format, sometimes used with NASM
-Group:		Development/Other
 
 %description
 NASM is the Netwide Assembler, a free portable assembler for the Intel
 80x86 microprocessor series, using primarily the traditional Intel
 instruction mnemonics and syntax.
 
+%package	doc
+Summary:	Extensive documentation for NASM
+Group:		Books/Computer books
+BuildArch:	noarch
+
 %description doc
 Extensive documentation for the Netwide Assembler, NASM, in HTML,
 PostScript, RTF and text formats.
+
+%package	rdoff
+Summary:	Tools for the RDOFF binary format, sometimes used with NASM
+Group:		Development/Other
 
 %description rdoff
 Tools for the operating-system independent RDOFF binary format, which
@@ -73,3 +73,4 @@ ln -sf nasmdoc0.html index.html
 %{_bindir}/rdf2bin
 %{_bindir}/rdf2ihx
 %{_bindir}/rdf2com
+
