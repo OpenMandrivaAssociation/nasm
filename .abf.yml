@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   nasm-2.10.09.tar.xz: 062dd7315b307870917e708a96b6862481cefc54
+sources:
+  nasm-2.11.02.tar.xz: d0525883abc6a8a9c0d2207b6872442ee26bfe1b
