@@ -1,6 +1,6 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.11.04
+Version:	2.11.05
 Release:	1
 Epoch:		1
 License:	BSD
@@ -16,7 +16,7 @@ NASM is the Netwide Assembler, a free portable assembler for the Intel
 80x86 microprocessor series, using primarily the traditional Intel
 instruction mnemonics and syntax.
 
-%package	doc
+%package doc
 Summary:	Extensive documentation for NASM
 Group:		Books/Computer books
 BuildArch:	noarch
@@ -25,7 +25,7 @@ BuildArch:	noarch
 Extensive documentation for the Netwide Assembler, NASM, in HTML,
 PostScript, RTF and text formats.
 
-%package	rdoff
+%package rdoff
 Summary:	Tools for the RDOFF binary format, sometimes used with NASM
 Group:		Development/Other
 
@@ -38,8 +38,8 @@ include linker, library manager, loader, and information dump.
 %setup -q
 
 %build
-%configure2_5x
-make everything
+%configure
+%make everything
 
 %install
 %makeinstall install_rdf
