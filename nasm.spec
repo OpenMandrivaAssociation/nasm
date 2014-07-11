@@ -1,7 +1,7 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.11.05
-Release:	3
+Release:	4
 Epoch:		1
 License:	BSD
 Group:		Development/Tools
