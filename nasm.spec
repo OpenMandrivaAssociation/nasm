@@ -11,6 +11,7 @@ BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
 BuildRequires:	perl(Font::TTF)
+BuildRequires:	fontconfig
 
 %description
 NASM is the Netwide Assembler, a free portable assembler for the Intel
