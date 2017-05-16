@@ -10,6 +10,7 @@ Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
+BuildRequires:	perl(Font::TTF)
 
 %description
 NASM is the Netwide Assembler, a free portable assembler for the Intel
