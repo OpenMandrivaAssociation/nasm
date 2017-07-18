@@ -1,6 +1,6 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.12.01
+Version:	2.13.01
 Release:	1
 Epoch:		1
 License:	BSD
@@ -10,6 +10,11 @@ Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}
 BuildRequires:	ghostscript
 BuildRequires:	groff
 BuildRequires:	texinfo
+BuildRequires:	perl(Font::TTF)
+BuildRequires:	fontconfig
+BuildRequires:	fonts-ttf-liberation
+BuildRequires:	texlive-sourcesanspro
+BuildRequires:	texlive-clearsans
 
 %description
 NASM is the Netwide Assembler, a free portable assembler for the Intel
