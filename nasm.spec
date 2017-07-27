@@ -75,7 +75,7 @@ include linker, library manager, loader, and information dump.
 
 %build
 %configure
-%make everything
+%make all manpages rdf
 
 %install
 %makeinstall install_rdf
