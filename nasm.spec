@@ -45,7 +45,8 @@ Extensive documentation for the Netwide Assembler, NASM, in HTML,
 PostScript, RTF and text formats.
 
 %files doc
-%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz doc/html
+%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz 
+#doc/html
 
 #----------------------------------------------------------------------------
 
@@ -82,6 +83,6 @@ include linker, library manager, loader, and information dump.
 cd doc
 #cp -r info %{buildroot}%{_infodir}
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
-cd html
-ln -sf nasmdoc0.html index.html
+#cd html
+#ln -sf nasmdoc0.html index.html
 
