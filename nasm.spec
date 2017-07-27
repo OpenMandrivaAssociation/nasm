@@ -35,18 +35,17 @@ instruction mnemonics and syntax.
 
 #----------------------------------------------------------------------------
 
-%package doc
-Summary:	Extensive documentation for NASM
-Group:		Documentation
-BuildArch:	noarch
+#%package doc
+#Summary:	Extensive documentation for NASM
+#Group:		Documentation
+#BuildArch:	noarch
 
-%description doc
-Extensive documentation for the Netwide Assembler, NASM, in HTML,
-PostScript, RTF and text formats.
+#%description doc
+#Extensive documentation for the Netwide Assembler, NASM, in HTML,
+#PostScript, RTF and text formats.
 
-%files doc
-%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz 
-#doc/html
+#%files doc
+#%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz doc/html
 
 #----------------------------------------------------------------------------
 
