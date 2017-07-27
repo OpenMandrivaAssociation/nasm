@@ -31,7 +31,7 @@ instruction mnemonics and syntax.
 %{_mandir}/man1/nasm.1*
 %{_mandir}/man1/ndisasm.1*
 %{_mandir}/man1/rd*.1*
-%{_infodir}/nasm.info*
+#%{_infodir}/nasm.info*
 
 #----------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ include linker, library manager, loader, and information dump.
 %install
 %makeinstall install_rdf
 cd doc
-cp -r info %{buildroot}%{_infodir}
+#cp -r info %{buildroot}%{_infodir}
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
 cd html
 ln -sf nasmdoc0.html index.html
