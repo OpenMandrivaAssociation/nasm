@@ -71,8 +71,7 @@ include linker, library manager, loader, and information dump.
 %autosetup -p1
 
 %build
-%configure \
-    --enable-lto
+%configure
 
 %make_build all manpages rdf
 
