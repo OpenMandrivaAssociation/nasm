@@ -19,7 +19,7 @@ NASM is the Netwide Assembler, a free portable assembler for the Intel
 instruction mnemonics and syntax.
 
 %files
-%doc LICENSE CHANGES TODO AUTHORS README doc/internal.doc
+%doc LICENSE CHANGES AUTHORS README.md doc/internal.doc
 %{_bindir}/nasm
 %{_bindir}/ndisasm
 %{_bindir}/rdf2ith
@@ -83,4 +83,3 @@ cd doc
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
 #cd html
 #ln -sf nasmdoc0.html index.html
-
