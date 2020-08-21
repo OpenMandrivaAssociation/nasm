@@ -1,7 +1,7 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.14.02
-Release:	4
+Version:	2.15.04
+Release:	1
 Epoch:		1
 License:	BSD
 Group:		Development/Tools
@@ -19,7 +19,7 @@ NASM is the Netwide Assembler, a free portable assembler for the Intel
 instruction mnemonics and syntax.
 
 %files
-%doc LICENSE CHANGES TODO AUTHORS README doc/internal.doc
+%doc LICENSE CHANGES AUTHORS doc/internal.doc
 %{_bindir}/nasm
 %{_bindir}/ndisasm
 %{_bindir}/rdf2ith
@@ -73,7 +73,8 @@ include linker, library manager, loader, and information dump.
 %build
 %configure
 
-%make_build all manpages rdf
+%make_build all manpages
+# all manpages rdf
 
 %install
 %make_install install_rdf
