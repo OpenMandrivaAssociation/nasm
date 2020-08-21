@@ -84,4 +84,3 @@ cd doc
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
 #cd html
 #ln -sf nasmdoc0.html index.html
-
