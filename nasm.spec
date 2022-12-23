@@ -1,6 +1,6 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
-Version:	2.15.05
+Version:	2.16.01
 Release:	1
 Epoch:		1
 License:	BSD
@@ -12,6 +12,7 @@ BuildRequires:	groff
 BuildRequires:	perl(Font::TTF)
 BuildRequires:	fontconfig
 BuildRequires:	fonts-ttf-liberation
+Obsoletes: %{name}-rdoff < %{EVRD}
 
 %description
 NASM is the Netwide Assembler, a free portable assembler for the Intel
@@ -22,12 +23,8 @@ instruction mnemonics and syntax.
 %doc LICENSE CHANGES AUTHORS doc/internal.doc
 %{_bindir}/nasm
 %{_bindir}/ndisasm
-%{_bindir}/rdf2ith
-%{_bindir}/rdf2srec
-%{_mandir}/man1/ldrdf.1*
 %{_mandir}/man1/nasm.1*
 %{_mandir}/man1/ndisasm.1*
-%{_mandir}/man1/rd*.1*
 #%{_infodir}/nasm.info*
 
 #----------------------------------------------------------------------------
@@ -46,27 +43,6 @@ instruction mnemonics and syntax.
 
 #----------------------------------------------------------------------------
 
-%package rdoff
-Summary:	Tools for the RDOFF binary format, sometimes used with NASM
-Group:		Development/Tools
-
-%description rdoff
-Tools for the operating-system independent RDOFF binary format, which
-is sometimes used with the Netwide Assembler (NASM).  These tools
-include linker, library manager, loader, and information dump.
-
-%files rdoff
-%doc rdoff/README rdoff/doc/v1-v2.txt
-%{_bindir}/rdfdump
-%{_bindir}/ldrdf
-%{_bindir}/rdx
-%{_bindir}/rdflib
-%{_bindir}/rdf2bin
-%{_bindir}/rdf2ihx
-%{_bindir}/rdf2com
-
-#----------------------------------------------------------------------------
-
 %prep
 %autosetup -p1
 
@@ -77,7 +53,7 @@ include linker, library manager, loader, and information dump.
 # all manpages rdf
 
 %install
-%make_install install_rdf
+%make_install
 
 cd doc
 #cp -r info %{buildroot}%{_infodir}
