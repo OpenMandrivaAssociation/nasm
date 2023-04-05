@@ -1,17 +1,14 @@
 Summary:	The Netwide Assembler, a portable x86 assembler with Intel-like syntax
 Name:		nasm
 Version:	2.16.01
-Release:	2
+Release:	3
 Epoch:		1
 License:	BSD
 Group:		Development/Tools
-Url:		http://nasm.sourceforge.net
+Url:		https://www.nasm.us/
 Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
-BuildRequires:	ghostscript
-BuildRequires:	groff
-BuildRequires:	perl(Font::TTF)
-BuildRequires:	fontconfig
-BuildRequires:	fonts-ttf-liberation
+BuildRequires:	xmlto
+BuildRequires:	asciidoc
 Obsoletes: %{name}-rdoff < %{EVRD}
 
 %description
@@ -23,23 +20,8 @@ instruction mnemonics and syntax.
 %doc LICENSE CHANGES AUTHORS doc/internal.doc
 %{_bindir}/nasm
 %{_bindir}/ndisasm
-%{_mandir}/man1/nasm.1*
-%{_mandir}/man1/ndisasm.1*
-#%{_infodir}/nasm.info*
-
-#----------------------------------------------------------------------------
-
-#%package doc
-#Summary:	Extensive documentation for NASM
-#Group:		Documentation
-#BuildArch:	noarch
-
-#%description doc
-#Extensive documentation for the Netwide Assembler, NASM, in HTML,
-#PostScript, RTF and text formats.
-
-#%files doc
-#%doc doc/nasmdoc.ps.xz doc/nasmdoc.txt.xz doc/html
+%doc %{_mandir}/man1/nasm.1*
+%doc %{_mandir}/man1/ndisasm.1*
 
 #----------------------------------------------------------------------------
 
@@ -56,7 +38,4 @@ instruction mnemonics and syntax.
 %make_install
 
 cd doc
-#cp -r info %{buildroot}%{_infodir}
 xz -v --text nasmdoc*.txt nasmdoc*.ps||true
-#cd html
-#ln -sf nasmdoc0.html index.html
