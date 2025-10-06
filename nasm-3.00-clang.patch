@@ -1,0 +1,21 @@
+diff -up nasm-3.00/include/nasmlib.h.omv~ nasm-3.00/include/nasmlib.h
+--- nasm-3.00/include/nasmlib.h.omv~	2025-10-06 20:30:09.186306549 +0200
++++ nasm-3.00/include/nasmlib.h	2025-10-06 20:30:45.971194192 +0200
+@@ -167,7 +167,7 @@ void nasm_write(const void *, size_t, FI
+ /*
+  * NASM failure at build time if the argument is false
+  */
+-#ifdef static_assert
++#if 1 //def static_assert
+ # define nasm_static_assert(x) static_assert((x), #x)
+ #elif defined(HAVE_FUNC_ATTRIBUTE_ERROR) && defined(__OPTIMIZE__)
+ # define nasm_static_assert(x)                                              \
+@@ -189,7 +189,7 @@ void nasm_write(const void *, size_t, FI
+  * the assert value at compile time. Since if_constant triggers
+  * pedantic warnings on gcc, turn them off explicitly around this code.
+  */
+-#ifdef static_assert
++#if 1 //def static_assert
+ # define nasm_try_static_assert(x)                                          \
+     do {                                                                    \
+         not_pedantic_start                                                  \
