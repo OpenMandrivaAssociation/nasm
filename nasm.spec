@@ -6,6 +6,11 @@ License:	BSD
 Group:		Development/Tools
 Url:		https://www.nasm.us/
 Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	xmlto
 BuildRequires:	asciidoc
 Obsoletes: %{name}-rdoff < %{EVRD}
